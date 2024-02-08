@@ -11,10 +11,10 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/pokemons">Pokemons</RouterLink>
-
+        <RouterLink class="btn btn-outline-primary me-2 mb-2" to="/">Home</RouterLink>
+        <RouterLink class="btn btn-outline-primary me-2 mb-2" to="/about">About</RouterLink>
+        <RouterLink class="btn btn-outline-primary me-2 mb-2" to="/pokemons">Pokemons</RouterLink>
+        <RouterLink class="btn btn-outline-primary me-2 mb-2" to="/favoritos">Favoritos</RouterLink>
       </nav>
     </div>
   </header>

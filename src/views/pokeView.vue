@@ -2,12 +2,17 @@
 import axios from 'axios';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
+import {useGetData} from '@/composables/getData';
+import {useFavoritosStore} from '@/store/favorito'
 
-import {useGetData} from '@/composables/getData'
+
 
 const poke = ref({});
 
 const route = useRoute()
+const useFavoritos = useFavoritosStore()
+
+const {add, findPoke} = useFavoritos;
 
     const {getData, data} = useGetData()
 
@@ -36,12 +41,15 @@ const route = useRoute()
     <div class="card" v-else>
     <h1>Pokemon no existe...</h1>
     </div>
+    <button :disabled="findPoke(data.name)" class="btn btn-primary mt-2" @click="add(data)">Favoritos</button>
+    
 </template>
 
 <style scoped>
 
     .card{
-        border: solid 1px black;
+        border: none;
+        background-color: rgb(241, 200, 148);
         border-radius: 5px;
         height: 300px;
         width: 300px;
